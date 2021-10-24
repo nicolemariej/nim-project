@@ -1,7 +1,12 @@
 from random import randrange
 #set players
-print("Welcome to NIM")
-print("Hello, I am AI player, please tell me a little bit more about yourself...")
+print("Welcome to ")
+print("   /|   /   |       /|   /|")
+print("  / |  /    |      / |  / |")
+print(" /  | /     |     /  | /  |")
+print("/   |/      |    /   |/   |")
+print("\nRules:\n1. The first player will select the amount of stones from 30-50\n2.Players will then take it in turn to remove either 1, 2 or 3 stones.\n3. The player to remove the last stone wins!")
+print("\nOK, now let's get started! please tell me a little bit more about yourself...")
 player1Name = input("Player 1, what is your name? ")
 player1 = player1Name.capitalize()
 
