@@ -36,12 +36,12 @@ def stonePick():
                     amountOfStones -= move
                     print(f"There are {amountOfStones} remaining")
                     return amountOfStones
-                elif amountOfStones - x < 0:
+                elif amountOfStones - move < 0:
                     print("There are not that many stones available. Try again.")
                 else:
-                    print("You can only select 1-3 stones, please try again")
+                    print("ERROR! You can only select 1-3 stones, please try again")
            except:
-                print("You can only select 1-3 stones, please try again")
+                print("ERROR! You can only select 1-3 stones, please try again")
 
     while amountOfStones > 0:
         print(f"{player1}: Please take your turn: ")
@@ -61,12 +61,13 @@ def stonePick():
         if amountOfStones > 0:
             if amountOfStones / 3 == 0:
                 amountOfStones -= 2
-                print(f"I have taken 2 stones, the remaning amount of stones are {amountOfStones}.")
+                print(f"I have taken 2 stones, the remaining amount of stones are {amountOfStones}.")
             else:
                 amountOfStones -= 1
                 print(f"I have taken 1 stone, the remaining stones are {amountOfStones}")
-            if amountOfStones == 0:
-                 print("AI has won!!")
+        if amountOfStones == 0:
+            print("AI has won!!")
+            break
 
 
 while True:
