@@ -1,3 +1,4 @@
+#student no: 213363
 def stonePick():#Function that plays the entire game from the start
 #introduction to the game
     print("Welcome to ")
@@ -59,6 +60,10 @@ def stonePick():#Function that plays the entire game from the start
         if amountOfStones == 3: #If there are 3 stones, the AI will remove 3 stones
             amountOfStones -= 3
             print(f"I have taken 3 stones, the remaining amount of stones are {amountOfStones}.") #this announcement will only run when the AI selects 3 stones
+        if amountOfStones == 2:  # If there are 2 stones, the AI will remove 2 stones
+            amountOfStones -= 2
+            print(
+                f"I have taken 2 stones, the remaining amount of stones are {amountOfStones}.")  # this announcement will only run when the AI selects 3 stones
         if amountOfStones > 0:
             if amountOfStones % 3 == 0: # If the remainder of stones divided by 3 is 0, the AI will remove 2 stones
                 amountOfStones -= 2
