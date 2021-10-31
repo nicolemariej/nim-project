@@ -7,6 +7,7 @@ def stonePick():#Function that plays the entire game from the start
     print(" /  | /     |     /  | /  |")
     print("/   |/      |    /   |/   |") #On the screen, this will display an image of the word "NIM"
     print("\nRules:\n1. The first player will select the amount of stones from 30-50\n2.Players will then take it in turn to remove either 1, 2 or 3 stones.\n3. The player to remove the last stone wins!")
+    print("My name is AI and you will be playing against me also.")
     print("\nOK, now let's get started! please tell me a little bit more about yourself...")
 
 #Players input their details
@@ -20,12 +21,16 @@ def stonePick():#Function that plays the entire game from the start
 
     #Amount of stones is decided on
     while True:
-        amountOfStones = int(input(player1 + " please select a number between 30 - 50 "))#Player 1 is asked to set the amount of stones
-        if amountOfStones in range(30, 51): #If they type anything other than a full number ranging from 30-50 and error message will ask them to try again
-            print(f"There are {amountOfStones} stones")
-            break
-        else:
-         print("The number must be between 30-50")
+        try:
+            amountOfStones = int(input(player1 + " please select a number between 30 - 50 "))#Player 1 is asked to set the amount of stones
+            if amountOfStones in range(30, 51): #If they type anything other than a full number ranging from 30-50 and error message will ask them to try again
+                print(f"There are {amountOfStones} stones")
+                break
+            else:
+                print("The number must be between 30-50")
+        except: print("invalid entry, please try again")
+
+
 #The game will not continue until the player has selected a valid number
 
     #Players decide on how many stones to remove
@@ -44,7 +49,7 @@ def stonePick():#Function that plays the entire game from the start
            except:
                 print("ERROR! You can only select 1-3 stones, please try again")#This function is
 #Loop until there are no stones then a winner is announced
-    while amountOfStones > 0: #A loop that continues until there are no stones, asking the players to select a stone number and annoucing the AI's go. Once the amount reaches 0 the loop stops and the winner is announced.
+    while amountOfStones > 0: #A loop that continues until there are no stones, asking the players to select a stone number and announcing the AI's go. Once the amount reaches 0 the loop stops and the winner is announced.
         print(f"{player1}: Please take your turn: ")
         amountOfStones = selectStone(amountOfStones)#Sends the number of stones to the selectStones function
         if amountOfStones == 0: #If amount is 0, the winner is announced
@@ -85,6 +90,7 @@ while True:
         continue
     elif playAgain.lower() == 'n' or playAgain.lower() == 'no':
         print("OK, have a nice day!")
+        break
     else:
         print("I didn't quite get that... so let's play again!")
 
